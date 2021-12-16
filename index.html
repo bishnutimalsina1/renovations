@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .carousel-inner>.item>img,
+        .carousel-inner>.item>a>img {
+            width: 70%;
+            margin: auto;
+        }
+
+
+        .diagonal {
+            min-height: 40vh;
+        }
+
+        .diagonal-image {
+            /* margin-top:-20%; */
+            position: relative;
+            /* overflow: hidden; */
+            transition: .5s all;
+            background-repeat: no-repeat;
+            /* background-size: cover; */
+            background-position: center;
+            /* background-image: url('https://static.wixstatic.com/media/b25591_3352e742a2e5467aad7df422106fc278~mv2_d_3000_2000_s_2.jpg/v1/fill/w_659,h_412,al_c,q_80,usm_0.66_1.00_0.01/b25591_3352e742a2e5467aad7df422106fc278~mv2_d_3000_2000_s_2.jpg'); */
+        }
+
+        .svg-clip {
+            width: 0;
+            height: 0;
+        }
+
+        .background-image-div {
+            margin-top: -43rem !important;
+            /* width: 45px; */
+            /* display: block; */
+            /* height: 50vh; */
+            /* background: #000000 url('https://images.unsplash.com/photo-1447678523326-1360892abab8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=f2c48f62e3ccbc0948518b2188118f95') no-repeat center center; */
+            background-size: cover;
+
+            /* lets clip it*/
+            -webkit-clip-path: url(#hero-clip);
+            -webkit-clip-path: url(#hero-clip2);
+            clip-path: url(#hero-clip);
+            clip-path: url(#hero-clip2);
+        }
+
+        @media screen and (max-width: 600px) {
+            .diagonal {
+                min-height: auto;
+                padding-top: 45px !important;
+            }
+
+            .diagonal-image {
+                margin-top: 0px !important;
+                margin-left: 0px !important;
+                width: 100vw !important;
+                position: relative;
+                overflow: hidden;
+                transition: .5s all;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                /* background: url(https://static.wixstatic.com/media/b25591_3352e742a2e5467aad7df422106fc278~mv2_d_3000_2000_s_2.jpg/v1/fill/w_659,h_412,al_c,q_80,usm_0.66_1.00_0.01/b25591_3352e742a2e5467aad7df422106fc278~mv2_d_3000_2000_s_2.jpg); */
+                background-size: 100% 100%;
+                min-height: 30vh;
+            }
+
+            .diagonal-image .diagonal-text {
+                /* background: rgba(200, 100, 20, .5); */
+                height: 100%;
+                margin-top: 0px;
+                position: absolute;
+                -webkit-clip-path: none;
+                clip-path: none;
+                top: 0;
+                left: 0;
+
+
+
+            }
+
+            .background-image-div {
+                width: 100vw;
+                /* display: block; */
+                /* height: 50vh; */
+                /* background: #000000 url('https://images.unsplash.com/photo-1447678523326-1360892abab8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=f2c48f62e3ccbc0948518b2188118f95') no-repeat center center; */
+                background-size: cover;
+                -webkit-clip-path: none;
+                clip-path: none;
+                margin-top: 0px;
+                /* lets clip it*/
+                /* -webkit-clip-path: url(#hero-clip);
+            clip-path: url(#hero-clip); */
+            }
+
+
+        }
+
+        @media screen and (min-width: 601px) {
+            .diagonal-image:before {
+
+                content: '';
+                box-sizing: border-box;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-origin: content-box;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                top: 0;
+                margin-top: 0px;
+                left: 0;
+
+                border-left: 300px solid rgba(1, 106, 48, 0);
+                border-bottom: 80vh solid rgba(0, 0, 0, 0);
+                transition: .1s all;
+            }
+
+            .diagonal-image .diagonal-text {
+                margin-top: 0px;
+                height: 100%;
+                /* position: absolute; */
+                top: 0;
+                left: 0;
+                /* transform: translateX(100%); */
+                transition: .1s all;
+
+            }
+
+            .background-image-div {
+                width: 100vw;
+
+                /* display: block; */
+                /* height: 50vh; */
+                /* background: #000000 url('https://images.unsplash.com/photo-1447678523326-1360892abab8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=f2c48f62e3ccbc0948518b2188118f95') no-repeat center center; */
+                background-size: cover;
+                margin-top: 0px;
+                /* lets clip it*/
+                -webkit-clip-path: url(#hero-clip);
+                -webkit-clip-path: url(#hero-clip2);
+                clip-path: url(#hero-clip);
+                
+            }
+
+            .background-image-div2 {
+                width: 100vw;
+
+                /* display: block; */
+                /* height: 50vh; */
+                /* background: #000000 url('https://images.unsplash.com/photo-1447678523326-1360892abab8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=f2c48f62e3ccbc0948518b2188118f95') no-repeat center center; */
+                background-size: cover;
+                margin-top: 0px;
+                /* lets clip it*/
+                -webkit-clip-path: url(#hero-clip);
+                -webkit-clip-path: url(#hero-clip2);
+                clip-path: url(#hero-clip2);
+                
+            }
+
+            
+
+            /* .diagonal-image:hover .diagonal-text {
+                transform: translateX(0);
+            } */
+        }
+    </style>
+</head>
+
+<body>
+    <div style=" background: url('https://static.wixstatic.com/media/cb6894_fded8c1b75cd4d678d7c7d8ac8b1fd3c~mv2.jpeg/v1/fill/w_1440,h_152,al_c,q_80,usm_0.66_1.00_0.01/cb6894_fded8c1b75cd4d678d7c7d8ac8b1fd3c~mv2.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center;
+    height: 15vh; padding-top: 2rem;" class="img-fluid jumbotron center-contain">
+        <div class="card text-center" style="width: 100vw;">
+            <p style="color: black; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 60px;"
+                class="card-title">Renovations</p>
+        </div>
+
+    </div>
+
+    <div style="padding-left: 15px;  margin-right:5rem; padding-right: 5px;" class="">
+        <div class="container-fluid mt-1 pt-1 pt-md-0 mt-md-1">
+            <div class='row'>
+                <div class="col-md-5 ">
+                    <div class="card border-0 mt-md-5 pt-md-5 bg-transparent">
+                        <div style="padding-top: 5rem; margin-left: 45px;" class="card-body bg-transparent text-left">
+                            <h3 style="color: rgb(53, 105, 31);" class="card-title text-dark">UNT College of Music
+                                Courtyard</h3>
+                            <p style="font-size: 17px;" class="card-text">With enhancing from the Spec’s Charitable Foundation funded by John and
+                                Lindy Rydman.</p>
+                            <p style="font-size: 17px;" class="card-text">A once seldom used space of concrete acted only as a thruway that did
+                                not reflect the grand history is now a vibrant space for relaxation, study and community
+                                building. With new access to the Voertmann Concert Hall lobby (also remodeled).</p>
+                            <p style="font-size: 17px;" class="card-text">John and Lindy Rydman both received music education degrees from UNT
+                                together with their daughter own and operate Spec’s Wines, Spirits and Finer Foods with
+                                locations across Texas, including Denton.</p>
+                            <p style="font-size: 17px;" class="card-text">Has already been used as a Summer opera performance space and a viewing
+                                point for University President Neal Smatresk. Not to worry thought, the sculpture was
+                                moved to a more prominent location within the Courtyard. </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div style="width:65vw; margin-left:30%;" class="col-md-5 background-image-div diagonal diagonal-image">
+                    <svg height="0" width="0" class="svg-clip">
+                        <defs>
+                            <!-- 
+                            Adding the clipPathUnits="objectBoundingBox" to the clipPath element.
+                            This sizes the polygon properly.
+                            -->
+                            <clipPath id="hero-clip" clipPathUnits="objectBoundingBox">
+                                <!-- utilize relative values for the points attribute -->
+                                <polygon fill="none" points="0.3,0 1,0 1,.8 .2,.8 " />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div class="diagonal-text text-white">
+                        <!-- carousel start -->
+                        <div id="myCarousel1" class="carousel slide" data-ride="carousel" data-interval="9000"
+                            data-pause="hover">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/courtyard_001.jpg"
+                                        alt="Chania" width="460" height="345">
+                                </div>
+                                <div class="item ">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/courtyard_002.jpg"
+                                        alt="Chania" width="460" height="345">
+                                </div>
+
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/courtyard_003.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/courtyard_004.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item ">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/courtyard_005.jpeg"
+                                        alt="Chania" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/courtyard_006.jpg"
+                                        alt="Chania" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/courtyard_007.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/courtyard_008.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/courtyard_009.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/courtyard_010.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                            </div>
+
+                            <!-- Left and right controls -->
+
+                            <a style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001), rgba(0, 0, 0, 0));"
+                                class="left carousel-control" href="#myCarousel1" role="button" data-slide="prev">
+                                <span style="color: rgb(1, 106, 49);" class="glyphicon glyphicon-chevron-left"
+                                    aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001), rgba(0, 0, 0, 0));"
+                                class="right carousel-control" href="#myCarousel1" role="button" data-slide="next">
+                                <span style="color: rgb(1, 106, 49);" class="glyphicon glyphicon-chevron-right"
+                                    aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <!-- carousel end -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- green box -->
+    <div style="background-color:rgb(1, 106, 49); margin-top: 3rem; margin-bottom:1rem;">
+        <div class="container-fluid">
+            <div class='row'>
+                
+                <div style="margin-bottom:3rem; width:65vw; margin-top:5rem !important; margin-right:-10%;" class="col-md-1 col-lg-3 background-image-div2 diagonal diagonal-image">
+                    <svg  height="0" width="0" class="svg-clip">
+                        <defs >
+                            <!-- 
+                            Adding the clipPathUnits="objectBoundingBox" to the clipPath element.
+                            This sizes the polygon properly.
+                            -->
+                            <clipPath id="hero-clip2" clipPathUnits="objectBoundingBox">
+                                <!-- utilize relative values for the points attribute -->
+                                <polygon fill="none" points="0.6,0 0,0 0,.8 .8,.8" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div class="diagonal-text text-white">
+                        <!-- carousel start -->
+                        <div id="myCarousel2" class="carousel slide" data-ride="carousel" data-interval="9000"
+                            data-pause="hover">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/meit_001.jpg"
+                                        alt="Chania" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/meit_002.jpg"
+                                        alt="Chania" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/meit_003.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/meit_004.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/meit_005.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/meit_006.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/meit_007.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/meit_008.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/meit_009.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/meit_010.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                            </div>
+
+                            <!-- Left and right controls -->
+
+                            <a style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001), rgba(0, 0, 0, 0));"
+                                class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+                                <span style="color: rgb(255, 255, 255);" class="glyphicon glyphicon-chevron-left"
+                                    aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001), rgba(0, 0, 0, 0));"
+                                class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+                                <span style="color: rgb(255, 255, 255);" class="glyphicon glyphicon-chevron-right"
+                                    aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <!-- carousel end -->
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card border-0 mt-md-5 pt-md-5 bg-transparent">
+                        <div style="padding-top: 5rem;" class="card-body bg-transparent text-left">
+                            <h3 style="color: rgb(196, 214, 0);" class="card-title text-dark">The Merrill Ellis Intermedia Theater (MEIT)</h3>
+                            <p style="color: white; font-size: 17px;" class="text-white">The renovation to this historic space was significant including the removal of the South balcony.  Planned for completion prior to the Fall semester start-up, it would be six additional months before it was fully functional as a classroom and creative space. A major addition to this space was a previously noon-existent outside entrance with its own lobby are. space that led to a complete reconfiguration of the internal</p>
+                            <p style="color: white; font-size: 17px;" class="card-text">A configurable theater optimized for experimental music, intermedia, and performance art.</p>
+                            <p style="color: white; font-size: 17px;" class="card-text">Ellis founded the electronic music program at the University of North Texas College of Music shortly after he began teaching there in 1962.
+                                ​</p>
+                            <p style="color: white; font-size: 17px;" class="card-text">The Merrill Ellis Intermedia Theater (MEIT) is the performance venue of the Center for Experimental Music and Intermedia (CEMI).</p>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- green box -->
+
+    <!-- white box -->
+    <div style="padding-left: 15px;  margin-right:5rem; padding-right: 5px;" class="">
+        <div class="container-fluid pt-1 pt-md-0 ">
+            <div class='row'>
+                <div class="col-md-5 ">
+                    <div class="card border-0 mt-md-5 pt-md-5 bg-transparent">
+                        <div style="padding-top: 15rem; margin-left: 45px;" class="card-body bg-transparent text-left">
+                            <h3 style="color: rgb(53, 105, 31);" class="card-title text-dark">Recital Hall</h3>
+                            <p style="font-size: 17px;" class="card-text">
+                                The big question about the changes to the recital hall was is all the purple gone. It seems that historically, the recital hall had more than it fair share of purple. The answer to the question is that there is not a speck of purple remaining. Much like other renovations, much of this change included infrastructure upgrades and included a complete to the walls change. Acoustics, modern technology as this space doubles as a performance and classroom space. </p>
+                           
+
+                        </div>
+                    </div>
+                </div>
+                <div style="width:65vw; margin-left:30%; margin-top: -29rem !important;" class="col-md-5 background-image-div diagonal diagonal-image">
+                    <svg height="0" width="0" class="svg-clip">
+                        <defs>
+                            <!-- 
+                            Adding the clipPathUnits="objectBoundingBox" to the clipPath element.
+                            This sizes the polygon properly.
+                            -->
+                            <clipPath id="hero-clip" clipPathUnits="objectBoundingBox">
+                                <!-- utilize relative values for the points attribute -->
+                                <polygon fill="none" points="0.3,0 1,0 1,.8 .2,.8 " />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div class="diagonal-text text-white">
+                        <!-- carousel start -->
+                        <div id="myCarousel3" class="carousel slide" data-ride="carousel" data-interval="9000"
+                            data-pause="hover">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/_recital_hall_001.jpg"
+                                        alt="Chania" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/_recital_hall_002.jpg"
+                                        alt="Chania" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/_recital_hall_003.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/_recital_hall_004.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/_recital_hall_005.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/_recital_hall_006.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/_recital_hall_007.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/_recital_hall_008.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/_recital_hall_009.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/_recital_hall_010.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/_recital_hall_011.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                            </div>
+
+                            <!-- Left and right controls -->
+
+                            <a style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001), rgba(0, 0, 0, 0));"
+                                class="left carousel-control" href="#myCarousel3" role="button" data-slide="prev">
+                                <span style="color: rgb(1, 106, 49);" class="glyphicon glyphicon-chevron-left"
+                                    aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001), rgba(0, 0, 0, 0));"
+                                class="right carousel-control" href="#myCarousel3" role="button" data-slide="next">
+                                <span style="color: rgb(1, 106, 49);" class="glyphicon glyphicon-chevron-right"
+                                    aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <!-- carousel end -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- white box -->
+
+
+    <!-- green box -->
+    <div style="background-color:rgb(1, 106, 49); margin-top: 3rem; margin-bottom:3rem;">
+        <div class="container-fluid">
+            <div class='row'>
+                
+                <div style="margin-bottom:3rem; width:65vw; margin-top:5rem !important; margin-right:-10%;" class="col-md-1 col-lg-3 background-image-div2 diagonal diagonal-image">
+                    <svg  height="0" width="0" class="svg-clip">
+                        <defs >
+                            <!-- 
+                            Adding the clipPathUnits="objectBoundingBox" to the clipPath element.
+                            This sizes the polygon properly.
+                            -->
+                            <clipPath id="hero-clip2" clipPathUnits="objectBoundingBox">
+                                <!-- utilize relative values for the points attribute -->
+                                <polygon fill="none" points="0.6,0 0,0 0,.8 .8,.8" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div class="diagonal-text text-white">
+                        <!-- carousel start -->
+                        <div id="myCarousel4" class="carousel slide" data-ride="carousel" data-interval="9000"
+                            data-pause="hover">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/choir_room_001.jpg"
+                                        alt="Chania" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/choir_room_002.jpg"
+                                        alt="Chania" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/choir_room_003.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/choir_room_004.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/choir_room_005.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/choir_room_006.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/choir_room_007.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/choir_room_008.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/choir_room_009.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                                <div class="item">
+                                    <img src="https://thankyou.music.unt.edu/sites/default/files/choir_room_010.jpg"
+                                        alt="Flower" width="460" height="345">
+                                </div>
+                            </div>
+
+                            <!-- Left and right controls -->
+
+                            <a style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001), rgba(0, 0, 0, 0));"
+                                class="left carousel-control" href="#myCarousel4" role="button" data-slide="prev">
+                                <span style="color: rgb(255, 255, 255);" class="glyphicon glyphicon-chevron-left"
+                                    aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001), rgba(0, 0, 0, 0));"
+                                class="right carousel-control" href="#myCarousel4" role="button" data-slide="next">
+                                <span style="color: rgb(255, 255, 255);" class="glyphicon glyphicon-chevron-right"
+                                    aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <!-- carousel end -->
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card border-0 mt-md-5 pt-md-5 bg-transparent">
+                        <div style="padding-top: 5rem;" class="card-body bg-transparent text-left">
+                            <h3 style="color: rgb(196, 214, 0);" class="card-title text-dark">Choir Room</h3>
+                            <p style="color: white; font-size: 17px;" class="text-white">Space matters. Although the rectangular cinder block room served its purpose for more than 45 years and saw extraordinary music being prepared, it was time for the space to be brought to a standard befitting. Used primarily for choral rehearsal space and conducting classes, the room can now double as a performance space complete with proper lighting and with live streaming capability. </p>
+                            <p style="color: white; font-size: 17px;" class="card-text">More than cosmetic changes we planned and completed. Significant infrastructure changes were made from new air cooling and heating, electrical wiring and sound proofing enhancements to a transformation of acoustical quality. All the modern necessities are now in place to reflect the modern sophisticated classroom space.</p>
+                            <p style="color: white; font-size: 17px;" class="card-text">With the pushing of a few buttons, this space transforms from a busy rehearsal space to a small performance space ideal for small ensembles performance and recitals.</p>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- green box -->
+
+</body>
+
+</html>
