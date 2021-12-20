@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Designed by Bishnu Timalsina -->
 
 <head>
-    <title>Bootstrap Example</title>
+    <title>Renovations</title>
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -214,10 +215,10 @@
 </head>
 
 <body>
-    <div style=" background: url('https://static.wixstatic.com/media/cb6894_fded8c1b75cd4d678d7c7d8ac8b1fd3c~mv2.jpeg/v1/fill/w_1440,h_152,al_c,q_80,usm_0.66_1.00_0.01/cb6894_fded8c1b75cd4d678d7c7d8ac8b1fd3c~mv2.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center;
+    <div style=" background: url('https://thankyou.music.unt.edu/sites/default/files/background.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center;
     height: 15vh; padding-top: 2rem;" class="img-fluid jumbotron center-contain">
         <div class="card text-center" style="width: 100vw;">
-            <p style="color: black; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 60px;"
+            <p style="color: black; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 70px;"
                 class="card-title">Renovations</p>
         </div>
 
@@ -349,7 +350,7 @@
                         <!-- carousel start -->
                         <div class="container">
                             
-                            <div style="margin-left: 12rem;" class="your-class1 col-lg-8">
+                            <div style="margin-left: 12rem;" class="your-class2 col-lg-8">
                                 <div class="">
                                     <a href="https://thankyou.music.unt.edu/sites/default/files/meit_001.jpg">
                                         <img width=100% 
@@ -461,7 +462,7 @@
                         <!-- carousel start -->
                         <div style="margin-top:11rem;" class="container">
                             <div class="col-lg-2"></div>
-                            <div class="your-class1 col-lg-8">
+                            <div class=" your-class3 col-lg-8">
                                 <div class="">
                                     <a href="https://thankyou.music.unt.edu/sites/default/files/_recital_hall_001.jpg">
                                         <img width=100% 
@@ -553,7 +554,7 @@
                         <!-- carousel start -->
                         <div class="container">
                             
-                            <div style="margin-left: 12rem;" class="your-class1 col-lg-8">
+                            <div style="margin-left: 12rem;" class=" your-class4 col-lg-8">
                                 <div class="">
                                     <a href="https://thankyou.music.unt.edu/sites/default/files/choir_room_001.jpg">
                                         <img width=100% 
@@ -645,7 +646,61 @@
                 dots: false,
                 slidesToShow: 1,
                 autoplay: true,
-                autoplaySpeed: 2000,
+                autoplaySpeed: 3000,
+                arrows: true,
+                responsive: [
+
+                    {
+                        breakpoint: 400,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: true
+                        }
+                    }
+                ]
+            });
+            $('.your-class2').slick({
+                dots: false,
+                slidesToShow: 1,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                arrows: true,
+                responsive: [
+
+                    {
+                        breakpoint: 400,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: true
+                        }
+                    }
+                ]
+            });
+            $('.your-class3').slick({
+                dots: false,
+                slidesToShow: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: true,
+                responsive: [
+
+                    {
+                        breakpoint: 400,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: true
+                        }
+                    }
+                ]
+            });
+            $('.your-class4').slick({
+                dots: false,
+                slidesToShow: 1,
+                autoplay: true,
+                autoplaySpeed: 4000,
                 arrows: true,
                 responsive: [
 
